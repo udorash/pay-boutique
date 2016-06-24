@@ -18,6 +18,10 @@ module PayBoutique
       @xml.xpath("//Message//Body//Status").text
     end
 
+    def reference_id
+      @xml.xpath("//Message//Body//ReferenceID").text
+    end
+
     def order_id
       @order_id
     end
