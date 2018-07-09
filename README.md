@@ -38,3 +38,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
 # pay_boutique
+
+# Docs
+
+[link to docs](https://sites.google.com/a/payboutique.com/paybwiki/wiki/xml_v0-5)

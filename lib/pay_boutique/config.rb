@@ -2,9 +2,14 @@ module PayBoutique
   class Config
     include ActiveSupport::Configurable
 
-    config_accessor :user_id, :password, :merchant_id, :success_url, :failure_url, :postback_url, :live, :site_address
+    CONFIGS = %i[
+      site_address buyer_currency merchant_currency password live credit_card_postback_url
+      merchant_id success_url failure_url qiwi_postback_url user_id request_url postback_url
+    ].freeze
 
-    def initialize(options = {})
+    config_accessor(*CONFIGS)
+
+    def initialize(**options)
       options.each do |key, value|
         config.send("#{key}=", value)
       end
