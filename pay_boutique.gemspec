@@ -7,6 +7,7 @@ Gem::Specification.new do |spec|
   spec.version       = PayBoutique::VERSION
   spec.authors       = ['Yuri Zubov', 'Alexandr Senyuk']
   spec.email         = ['I0Result86@gmail.com']
+  spec.homepage      = 'https://github.com/SumatoSoft/pay-boutique'
 
   spec.summary       = 'Payment system PayBoutique'
   spec.description   = 'Very simple wrapper for payment system PayBoutique'
@@ -16,16 +17,16 @@ Gem::Specification.new do |spec|
   # delete this section to allow pushing this gem to any host.
   raise 'RubyGems 2.0 or newer is required to protect against public gem pushes.' unless spec.respond_to?(:metadata)
 
-  spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
-  spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-  spec.bindir        = 'exe'
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.require_paths = ['lib']
+  spec.metadata['allowed_push_host'] = 'https://rubygems.org'
+  spec.files                         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  spec.bindir                        = 'exe'
+  spec.executables                   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.require_paths                 = ['lib']
 
   spec.add_development_dependency 'bundler', '~> 1.9'
   spec.add_development_dependency 'rake', '~> 10.0'
 
-  spec.add_runtime_dependency('activesupport', '>= 4.2.0')
-  spec.add_runtime_dependency('httparty', '>= 0.7.7')
-  spec.add_runtime_dependency('nokogiri', '>= 1.5.0')
+  spec.add_runtime_dependency 'activesupport', '>= 4.2.0'
+  spec.add_runtime_dependency 'httparty', '>= 0.7.7'
+  spec.add_runtime_dependency 'nokogiri', '>= 1.5.0'
 end
