@@ -30,6 +30,7 @@ module PayBoutique
                 order.SuccessURL success_url if try(:success_url)
                 order.FailureURL failure_url if try(:failure_url)
                 order.PostbackUrl postback_url
+                order.Param3 param3 if try(:param3)
                 order.Buyer do |buyer|
                   buyer.FirstName first_name if try(:first_name)
                   buyer.MiddleName middle_name if try(:middle_name)
@@ -69,7 +70,8 @@ module PayBoutique
             merchant_id order_id expiration_time description merchant_reference
             label product_name site_address payment_method first_name middle_name
             last_name address city country account_id success_url failure_url
-            credit_card_postback_url qiwi_postback_url
+            credit_card_postback_url qiwi_postback_url param3
+            yandex_money_postback_url
           ]
         end
       end
