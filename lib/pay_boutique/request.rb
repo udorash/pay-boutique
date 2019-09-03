@@ -4,7 +4,7 @@ module PayBoutique
   class Request
     include HTTParty
     headers 'Content-Type' => 'application/x-www-form-urlencoded; charset=UTF-8'
-    debug_output $stdout
+    # debug_output $stdout
 
     private
 

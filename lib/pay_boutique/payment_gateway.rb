@@ -1,5 +1,7 @@
 module PayBoutique
   class PaymentGateway < Request
+    LOG_FORMAT = :curl
+
     class Params < SimpleDelegator
       include Parametrizable
 
@@ -83,7 +85,17 @@ module PayBoutique
 
     def url
       response = self.class.post(request_url, body: request_body)
+      log_response(response)
       RequestParser.new(response).redirect_url
+    end
+
+    def log_response(response)
+      log = ::HTTParty::Logger.build(
+        PayBoutique.configuration.logger,
+        PayBoutique.configuration.log_level,
+        LOG_FORMAT
+      )
+      log.format(response.request, response.response)
     end
   end
 end
